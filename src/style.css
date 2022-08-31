@@ -1,0 +1,48 @@
+body {
+  font-family: "Poppins", sans-serif;
+}
+
+h2 {
+  font-weight: bolder;
+}
+
+.weekdays {
+  font-size: medium;
+  font-weight: 700;
+}
+
+.weather-icons {
+  font-size: 40px;
+}
+
+p {
+  font-size: small;
+}
+
+.date-time,
+.weather-status,
+.categories {
+  font-size: small;
+}
+
+.temperature-value {
+  font-size: 45px;
+  font-weight: bolder;
+}
+
+.degrees {
+  font-size: 15px;
+  font-weight: bolder;
+}
+
+.location {
+  font-size: 27px;
+  font-weight: bolder;
+}
+
+.btn {
+  font-size: 10px;
+}
+
+.a {
+}
