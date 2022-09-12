@@ -23,14 +23,15 @@ citySearch("Porto");
 
 function weather(response) {
   document.querySelector("#location").innerHTML = response.data.name;
-  document.querySelector("#temperature").innerHTML = Math.round(
-    response.data.main.temp
-  );
 
-  document.querySelector("#precipitation").innerHTML =
-    response.data.precipitation;
+  celsiusTemperature = response.data.main.temp;
+  document.querySelector("#temperature").innerHTML =
+    Math.round(celsiusTemperature);
+
   document.querySelector("#humidity").innerHTML = response.data.main.humidity;
-  document.querySelector("#wind").innerHTML = response.data.wind.speed;
+  document.querySelector("#wind").innerHTML = Math.round(
+    response.data.wind.speed
+  );
 }
 
 function citySearch(city) {
@@ -68,25 +69,28 @@ currentLocBtn.addEventListener("click", currentLocation);
 
 // Celsius/Fahrenheit conversion
 
-// function changeTemperatureToC(event) {
-//   event.preventDefault();
-//   let currentTemp = document.querySelector(".temperature-value");
-//   let temperature = displayTemperature;
-//   let celsiusTemperature = Math.round(temperature);
+function changeTemperatureToF(event) {
+  event.preventDefault();
+  let temperatureElement = document.querySelector("#temperature");
 
-//   currentTemp.innerHTML = celsiusTemperature;
-// }
+  celsius.classList.remove("active");
+  fahrenheit.classList.add("active");
+  let fahrenheitTemperature = (celsiusTemperature * 9) / 5 + 32;
+  temperatureElement.innerHTML = Math.round(fahrenheitTemperature);
+}
 
-// function changeTemperatureToF(event) {
-//   event.preventDefault();
-//   let currentTemp = document.querySelector(".temperature-value");
-//   let temperature = 24;
-//   let farenheitTemperature = Math.round((temperature * 9) / 5 + 32);
+function changeTemperatureToC(event) {
+  event.preventDefault();
+  celsius.classList.add("active");
+  fahrenheit.classList.remove("active");
+  let temperatureElement = document.querySelector("#temperature");
+  temperatureElement.innerHTML = Math.round(celsiusTemperature);
+}
 
-//   currentTemp.innerHTML = farenheitTemperature;
-// }
+let celsiusTemperature = null;
 
-// let celsius = document.querySelector(".celsius");
-// celsius.addEventListener("click", changeTemperatureToC);
-// let farenheit = document.querySelector(".farenheit");
-// farenheit.addEventListener("click", changeTemperatureToF);
+let fahrenheit = document.querySelector("#fahrenheit");
+fahrenheit.addEventListener("click", changeTemperatureToF);
+
+let celsius = document.querySelector("#celsius");
+celsius.addEventListener("click", changeTemperatureToC);

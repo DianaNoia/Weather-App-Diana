@@ -59,16 +59,15 @@
           </form>
           <div class="row">
             <div class="col">
-                <b id="temperature"
-                class="temperature-value">
-                  
-                </b>
-                <a href="" class="degrees celsius">ºC</a> 
-                <a href="" class="degrees farenheit">| ºF</a> 
+                <div class="float-left">
+                  <strong id="temperature" class="temperature-value"></strong
+                  ><span class="units"
+                    ><a href="#" id="celsius" class="active">°C</a> |
+                    <a href="#" id="fahrenheit">°F</a></span
+                  >
+                </div>
               <div class="categories">
                   <div>
-                    Precipitation:  <span id="precipitation"></span>%
-                    </br>
                     Humidity: <span id="humidity"></span>%
                     </br>
                     Wind: <span id="wind"></span>km/h
