@@ -3,16 +3,20 @@ body {
 }
 
 h2 {
+  color: #ec6e4c;
   font-weight: bolder;
-  margin-top: 20px;
   margin-bottom: 20px;
 }
 
+.status {
+  font-size: 13px;
+}
+
 .weather-app {
-  margin-top: 50px;
+  margin-top: 30px;
   margin-bottom: 20px;
 
-  padding: 30px;
+  padding: 20px;
 }
 
 .weather-forecast-card {
@@ -38,18 +42,27 @@ p {
   font-weight: bolder;
 }
 
-.degrees {
-  font-size: 15px;
-  font-weight: bolder;
+.temperature-value {
+  font-size: 60px;
+  font-weight: normal;
 }
 
 .location {
-  font-size: 27px;
-  font-weight: bolder;
+  font-size: 50px;
 }
 
 .btn {
   font-size: 10px;
+  padding: 5px 16px;
+  background-color: #ec6e4c;
+  border: 2px solid #ec6e4c;
+  transition-duration: 0.2s;
+}
+
+.btn:hover {
+  background-color: white;
+  color: #ec6e4c;
+  border: 2px solid #ec6e4c;
 }
 
 .a {
@@ -59,7 +72,7 @@ p {
   text-align: left;
 }
 
-.weekdays {
+.weather-forecast {
   text-align: center;
 }
 

@@ -94,6 +94,8 @@ function weather(response) {
   document.querySelector("#wind").innerHTML = Math.round(
     response.data.wind.speed
   );
+  let description = document.querySelector("#weather-status");
+  description.innerHTML = response.data.weather[0].description;
 
   getForecast(response.data.coord);
 }
